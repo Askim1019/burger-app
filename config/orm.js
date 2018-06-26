@@ -68,7 +68,7 @@ const orm = {
   
   updateOne: (table, objColVals, condition, cb) => {
     let changeColumns = objToSql(objColVals);
-    let queryString = `UPDATE table SET ${changeColumns} WHERE condition;`;
+    let queryString = `UPDATE ${table} SET ${changeColumns} WHERE condition;`;
     
     console.log(queryString);
     console.log(changeColumns);

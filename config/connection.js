@@ -1,6 +1,6 @@
 // Import mysql node library
 const mysql = require('mysql');
-const keys = require('./keys.js');
+const keys = require('../keys.js');
 
 // Create the connection function with config objects passed in
 const connection = mysql.createConnection({
