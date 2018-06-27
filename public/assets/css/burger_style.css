@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Paytone+One|Shrikhand');
+
+/* font-family: 'Shrikhand', cursive;
+font-family: 'Paytone One', sans-serif; */
+
+* {
+  outline: 1px solid red;
+}
+
+body { 
+  background: url(../img/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Shrikhand', cursive;
+  color: white;
+}
+
+#header {
+  background-color: rgba(40,39,39,0.7);
+  font-family: "Paytone One", sans-serif;
+}
+
+#card-display {
+  background-color: rgba(40,39,39,0.7);
+  font-family: "Paytone One", sans-serif;
+}
+
+#card-display .row {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+#burger-form {
+  margin-top: 50px;
+}
+
+#burger-form input {
+  margin: 20px 5px;
+}
+
+.addBurgerBtn {
+  margin: 15px 0;
+}
