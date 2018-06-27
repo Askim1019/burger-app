@@ -1,24 +1,25 @@
-// Import mysql node library
-const mysql = require('mysql');
-const keys = require('../keys.js');
+// Set up MySQL connection.
+require('dotenv').config();
+var mysql = require("mysql");
+var keys = require("../keys");
 
-// Create the connection function with config objects passed in
-const connection = mysql.createConnection({
+var connection = mysql.createConnection({
   host: "localhost",
-  port: 3306,
+  port: '3306',
   user: "root",
   password: keys.mysqlkey.secret,
   database: "burgers_db"
 });
 
-// Call the connection function to make connection
-connection.connect((err) => {
+// Make connection.
+connection.connect(function(err) {
   if (err) {
-    console.error(`error connecting: ${err.stack}`);
+    console.error("error connecting: " + err.stack);
     return;
   }
-  
-  console.log(`connected as id ${connection.threadId}`);
+  console.log("connected as id " + connection.threadId);
 });
 
+// Export connection for our ORM to use.
 module.exports = connection;
+
