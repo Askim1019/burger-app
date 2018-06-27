@@ -9,7 +9,7 @@ var connection = require("../config/connection.js");
 function printQuestionMarks(num) {
   var arr = [];
 
-  for (var i = 0; i < num; i++) {
+  for (var i = 0; i < num.length; i++) {
     arr.push("?");
   }
 
@@ -47,6 +47,16 @@ var orm = {
       if (err) {
         throw err;
       }
+      cb(result);
+    });
+  },
+
+  insertOne: function(table, columns, values, cb) {
+    var queryString = `INSERT INTO ${table} (${columns.toString()}) VALUES (${printQuestionMarks(values)});`;
+
+    console.log(queryString);
+
+    connection.query(queryString, values, function(err, result){
       cb(result);
     });
   }
