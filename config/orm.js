@@ -57,9 +57,28 @@ var orm = {
     console.log(queryString);
 
     connection.query(queryString, values, function(err, result){
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  },
+
+  updateOne: function(table, objColVals, condition, cb) {
+    var query = `UPDATE ${table} SET ${objToSql(objColVals)} WHERE ${condition}`
+
+    console.log(queryString);
+
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
       cb(result);
     });
   }
+
 };
 
 module.exports = orm;

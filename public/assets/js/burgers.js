@@ -17,9 +17,8 @@ $(document).ready(function(){
     });
   
   
-    $(".devour-btn").on("click", function(event) {
-      event.preventDefault();
-      
+    $(".devour").on("click", function(event) {
+      console.log("working");
       var id = $(this).data("id");
       var isDevoured = $(this).data("devoured");
       
@@ -27,9 +26,9 @@ $(document).ready(function(){
         devoured = isDevoured
       };
       
-      $.ajax("/burgers", {
+      $.ajax("/burgers/" + id, {
         type: "PUT",
-        data: updateBurger
+        data: updatedBurger
       }).then(function() {
         console.log("Updated burger id" + id + "as devoured");
       });
