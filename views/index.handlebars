@@ -1,8 +1,9 @@
 <div class="container bg">
 
-  <div class="row text-center justify-content-center" >
+  <div class="row text-center justify-content-center">
     <div class="text-center col-sm-8" id="header">
-      <h1>Eat-Da-Burger App!<h1>
+      <h1>Eat-Da-Burger App!
+        <h1>
     </div>
   </div>
 
@@ -21,9 +22,6 @@
             <input type="hidden" name="devoured" value="true">
             <button class="btn btn-info btn-sm devour-btn" type="submit">Devour it!</button>
           </form>
-          {{!-- <div class="col-sm-6 text-center devour-div">
-            <button class="btn btn-info btn-sm devour-btn" name="devour" id="devour-btn" data-id="{{id}}" data-devoured="true">Devour Me!</button>
-          </div> --}}
         </div>
         {{/unless}} {{/each}}
       </ul>
@@ -39,9 +37,10 @@
           <div class="col-sm-8 text-center">
             {{this.burger_name}}
           </div>
-          <div class="col-sm-4 text-center">
+          <form action="/burgers/{{this.id}}?_method=DELETE" method="POST">
+            <input type="hidden" name="remove" value="false">
             <button class="btn btn-danger btn-sm remove-btn" type="submit" data-id="{{id}}">Remove</button>
-          </div>
+          </form>
         </div>
         {{/if}} {{/each}}
       </ul>

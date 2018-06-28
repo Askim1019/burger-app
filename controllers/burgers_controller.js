@@ -31,4 +31,13 @@ router.put("/burgers/:id", function(req, res) {
   });
 });
 
+router.delete("/burgers/:id", function(req, res) {
+  var condition = `id=${req.params.id}`;
+  console.log(condition);
+  
+  burger.deleteOne(condition, function() {
+    res.redirect("/");
+  });
+});
+
 module.exports = router;
