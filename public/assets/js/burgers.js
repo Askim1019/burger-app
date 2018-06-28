@@ -33,7 +33,7 @@ $(function(){
         console.log("Updated burger id" + id + "as devoured");
       });
       
-    })
+    }) */
     
     
     $(".remove-btn").on("click", function(event) {

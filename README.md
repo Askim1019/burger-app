@@ -4,12 +4,12 @@
 
 Make your and name your own burgers then devour them at will!
 
-![alt text](/public/assets/img/background.jpg)
+![alt text](/public/assets/img/burgerapp.png)
 
 
 ## App deployed in Heroku
 
-[ https://baller-friend-finder.herokuapp.com/]( https://baller-friend-finder.herokuapp.com/)
+[ https://burgerapp-askim.herokuapp.com/]( https://burgerapp-askim.herokuapp.com/)
 
 ## Getting Started
 
