@@ -17,9 +17,13 @@
           <div class="col-sm-6 text-center">
             {{this.burger_name}}
           </div>
-          <div class="col-sm-6 text-center">
-            <button class="btn btn-info btn-sm" name="devour" id="devour-btn" data-id="{{id}}" data-devoured="true">Devour Me!</button>
-          </div>
+          <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+            <input type="hidden" name="devoured" value="true">
+            <button class="btn btn-info btn-sm devour-btn" type="submit">Devour it!</button>
+          </form>
+          {{!-- <div class="col-sm-6 text-center devour-div">
+            <button class="btn btn-info btn-sm devour-btn" name="devour" id="devour-btn" data-id="{{id}}" data-devoured="true">Devour Me!</button>
+          </div> --}}
         </div>
         {{/unless}} {{/each}}
       </ul>
@@ -36,7 +40,7 @@
             {{this.burger_name}}
           </div>
           <div class="col-sm-4 text-center">
-            <button class="btn btn-danger remove-btn" type="submit" data-id="{{id}}">Remove</button>
+            <button class="btn btn-danger btn-sm remove-btn" type="submit" data-id="{{id}}">Remove</button>
           </div>
         </div>
         {{/if}} {{/each}}

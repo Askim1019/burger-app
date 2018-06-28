@@ -1,5 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var methodOverride = require('method-override');
 
 var PORT = process.env.PORT || 3000;
 
@@ -13,7 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse application/json
 app.use(bodyParser.json());
-
+// override for PUT and post methods using ?_method=DELETE || ?_method=PUT
+app.use(methodOverride('_method'));
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 

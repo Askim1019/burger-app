@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
     $(".addBurgerBtn").on("submit", function(event) {
       event.preventDefault();
       
@@ -17,7 +17,7 @@ $(document).ready(function(){
     });
   
   
-    $(".devour").on("click", function(event) {
+    /* $(".devour-btn").on("click", function() {
       console.log("working");
       var id = $(this).data("id");
       var isDevoured = $(this).data("devoured");
@@ -33,7 +33,7 @@ $(document).ready(function(){
         console.log("Updated burger id" + id + "as devoured");
       });
       
-    });
+    })
     
     
     $(".remove-btn").on("click", function(event) {
